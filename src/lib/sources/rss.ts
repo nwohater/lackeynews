@@ -214,8 +214,9 @@ async function fetchRSSFeed(feed: RSSFeed): Promise<Article[]> {
         let imageUrl: string | undefined;
         
         // Check for media:content or media:thumbnail
-        const mediaContent = (item as any)['media:content'];
-        const mediaThumbnail = (item as any)['media:thumbnail'];
+        const itemWithMedia = item as unknown as Record<string, unknown>;
+        const mediaContent = itemWithMedia['media:content'] as { $?: { url?: string } } | undefined;
+        const mediaThumbnail = itemWithMedia['media:thumbnail'] as { $?: { url?: string } } | undefined;
         
         if (mediaContent?.$ && mediaContent.$.url) {
           imageUrl = mediaContent.$.url;
@@ -238,7 +239,8 @@ async function fetchRSSFeed(feed: RSSFeed): Promise<Article[]> {
             author = item.creator;
           } else if (typeof item.creator === 'object' && item.creator !== null) {
             // Handle case where creator is an object with name property
-            author = (item.creator as any).name || (item.creator as any).title || feed.name;
+            const creatorObj = item.creator as Record<string, unknown>;
+            author = (creatorObj.name as string) || (creatorObj.title as string) || feed.name;
           }
         }
 

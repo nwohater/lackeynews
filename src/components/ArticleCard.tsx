@@ -2,6 +2,7 @@ import { Article } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
 import { ExternalLink, MessageCircle, TrendingUp, ImageOff } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface ArticleCardProps {
   article: Article;
@@ -35,13 +36,14 @@ export function ArticleCard({ article }: ArticleCardProps) {
         <div className="flex gap-6">
           {/* Image */}
           {article.imageUrl && !imageError && (
-            <div className="flex-shrink-0 w-40 h-28 rounded-lg overflow-hidden bg-black/60 border border-cyan-500/30 group-hover:border-cyan-400 transition-colors">
-              <img
+            <div className="flex-shrink-0 w-40 h-28 rounded-lg overflow-hidden bg-black/60 border border-cyan-500/30 group-hover:border-cyan-400 transition-colors relative">
+              <Image
                 src={article.imageUrl}
                 alt={article.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                loading="lazy"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
                 onError={() => setImageError(true)}
+                unoptimized
               />
             </div>
           )}
