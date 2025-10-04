@@ -56,28 +56,28 @@ export default function Home() {
 
       {/* Header */}
       <header className="relative border-b border-cyan-500/20 bg-black/40 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <Newspaper className="w-10 h-10 text-cyan-400" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+              <div className="relative flex-shrink-0">
+                <Newspaper className="w-8 h-8 sm:w-10 sm:h-10 text-cyan-400" />
                 <div className="absolute inset-0 blur-xl bg-cyan-400/50" />
               </div>
-              <div>
-                <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+              <div className="min-w-0">
+                <h1 className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 truncate">
                   LACKEY<span className="text-cyan-300">NEWS</span>
                 </h1>
-                <p className="text-xs text-cyan-400/60 font-mono tracking-wider">NEURAL FEED v2.0</p>
+                <p className="text-[10px] sm:text-xs text-cyan-400/60 font-mono tracking-wider">NEURAL FEED v2.0</p>
               </div>
             </div>
             <button
               onClick={() => fetchNews(selectedTopics)}
               disabled={loading}
-              className="group relative flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              className="group relative flex items-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg overflow-hidden transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 active:scale-95 flex-shrink-0"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <RefreshCw className={`w-5 h-5 relative z-10 ${loading ? 'animate-spin' : ''}`} />
-              <span className="relative z-10">SYNC</span>
+              <RefreshCw className={`w-4 h-4 sm:w-5 sm:h-5 relative z-10 ${loading ? 'animate-spin' : ''}`} />
+              <span className="relative z-10 text-sm sm:text-base">SYNC</span>
             </button>
           </div>
 
