@@ -439,7 +439,7 @@ async function fetchRSSFeed(feed: RSSFeed): Promise<Article[]> {
 }
 
 async function fetchRSSNews(options?: FetchOptions): Promise<Article[]> {
-  const limit = options?.limit || 20;
+  const limit = options?.limit || 50;
 
   // Determine which feeds to fetch based on topics
   let feedsToFetch = AI_FEEDS;
@@ -456,12 +456,34 @@ async function fetchRSSNews(options?: FetchOptions): Promise<Article[]> {
     return [];
   }
 
-  // Fetch all feeds in parallel
+  // Limit number of feeds to fetch for better performance
+  // Take a sample of feeds if there are too many
+  const maxFeeds = 15;
+  if (feedsToFetch.length > maxFeeds) {
+    // Shuffle and take first maxFeeds to get variety
+    feedsToFetch = feedsToFetch
+      .sort(() => Math.random() - 0.5)
+      .slice(0, maxFeeds);
+  }
+
+  // Fetch all feeds in parallel with timeout
   const results = await Promise.all(
-    feedsToFetch.map((feed) => fetchRSSFeed(feed))
+    feedsToFetch.map(async (feed) => {
+      try {
+        // Add timeout to prevent slow feeds from blocking
+        const timeoutPromise = new Promise<Article[]>((resolve) => {
+          setTimeout(() => resolve([]), 5000); // 5 second timeout
+        });
+        const fetchPromise = fetchRSSFeed(feed);
+        return await Promise.race([fetchPromise, timeoutPromise]);
+      } catch (error) {
+        console.error(`Error fetching feed ${feed.name}:`, error);
+        return [];
+      }
+    })
   );
 
-  // Flatten and sort by date
+  // Flatten, sort by date, and limit to top articles
   const allArticles = results.flat();
   return allArticles
     .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime())
