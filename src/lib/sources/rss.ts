@@ -349,6 +349,11 @@ const AI_FEEDS: RSSFeed[] = [
     name: 'The New Stack',
     topics: ['programming', 'devops', 'cloud'],
   },
+  {
+    url: 'https://www.reddit.com/r/ExperiencedDevs/top/.rss?t=month',
+    name: 'r/ExperiencedDevs',
+    topics: ['programming', 'career', 'software-engineering'],
+  },
 ];
 
 async function fetchRSSFeed(feed: RSSFeed): Promise<Article[]> {
