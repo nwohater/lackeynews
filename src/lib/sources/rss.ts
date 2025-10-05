@@ -120,6 +120,57 @@ const AI_FEEDS: RSSFeed[] = [
     name: 'Microsoft Research',
     topics: ['ai', 'research', 'technology'],
   },
+  // Business & Finance feeds
+  {
+    url: 'https://www.bloomberg.com/feed/podcast/etf-report.xml',
+    name: 'Bloomberg',
+    topics: ['business', 'finance', 'markets'],
+  },
+  {
+    url: 'https://www.forbes.com/business/feed/',
+    name: 'Forbes',
+    topics: ['business', 'finance', 'entrepreneurship'],
+  },
+  {
+    url: 'https://www.cnbc.com/id/100003114/device/rss/rss.html',
+    name: 'CNBC',
+    topics: ['business', 'finance', 'markets'],
+  },
+  {
+    url: 'https://www.ft.com/?format=rss',
+    name: 'Financial Times',
+    topics: ['business', 'finance', 'world'],
+  },
+  {
+    url: 'https://www.economist.com/latest/rss.xml',
+    name: 'The Economist',
+    topics: ['business', 'economics', 'world'],
+  },
+  {
+    url: 'https://hbr.org/feed',
+    name: 'Harvard Business Review',
+    topics: ['business', 'management', 'leadership'],
+  },
+  {
+    url: 'https://www.marketwatch.com/rss/topstories',
+    name: 'MarketWatch',
+    topics: ['business', 'finance', 'markets'],
+  },
+  {
+    url: 'https://feeds.a.dj.com/rss/RSSMarketsMain.xml',
+    name: 'Wall Street Journal',
+    topics: ['business', 'finance', 'markets'],
+  },
+  {
+    url: 'https://www.businessinsider.com/rss',
+    name: 'Business Insider',
+    topics: ['business', 'technology', 'finance'],
+  },
+  {
+    url: 'https://www.investopedia.com/feedbuilder/feed/getfeed/?feedName=rss_articles',
+    name: 'Investopedia',
+    topics: ['business', 'finance', 'investing'],
+  },
   // Sports feeds
   {
     url: 'https://www.espn.com/espn/rss/news',
