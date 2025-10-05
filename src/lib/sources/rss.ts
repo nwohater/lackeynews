@@ -31,9 +31,59 @@ const AI_FEEDS: RSSFeed[] = [
     topics: ['ai', 'technology'],
   },
   {
+    url: 'http://feeds.feedburner.com/TechCrunch/',
+    name: 'TechCrunch',
+    topics: ['technology', 'business', 'startups'],
+  },
+  {
     url: 'https://techcrunch.com/category/artificial-intelligence/feed/',
     name: 'TechCrunch AI',
     topics: ['ai', 'technology', 'business'],
+  },
+  {
+    url: 'https://www.wired.com/feed/rss',
+    name: 'Wired',
+    topics: ['technology', 'science', 'culture'],
+  },
+  {
+    url: 'https://www.theverge.com/rss/index.xml',
+    name: 'The Verge',
+    topics: ['technology', 'gadgets'],
+  },
+  {
+    url: 'http://feeds.arstechnica.com/arstechnica/index/',
+    name: 'Ars Technica',
+    topics: ['technology', 'science'],
+  },
+  {
+    url: 'http://feeds.mashable.com/Mashable',
+    name: 'Mashable',
+    topics: ['technology', 'digital-culture'],
+  },
+  {
+    url: 'https://news.ycombinator.com/rss',
+    name: 'Hacker News',
+    topics: ['technology', 'programming', 'startups'],
+  },
+  {
+    url: 'https://www.producthunt.com/feed',
+    name: 'Product Hunt',
+    topics: ['technology', 'startups', 'products'],
+  },
+  {
+    url: 'https://www.engadget.com/rss.xml',
+    name: 'Engadget',
+    topics: ['technology', 'gadgets'],
+  },
+  {
+    url: 'https://venturebeat.com/feed/',
+    name: 'VentureBeat',
+    topics: ['technology', 'ai', 'business'],
+  },
+  {
+    url: 'https://gizmodo.com/rss',
+    name: 'Gizmodo',
+    topics: ['technology', 'science', 'gadgets'],
   },
   {
     url: 'https://www.technologyreview.com/feed/',
