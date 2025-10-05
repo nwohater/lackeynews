@@ -354,6 +354,17 @@ const AI_FEEDS: RSSFeed[] = [
     name: 'r/ExperiencedDevs',
     topics: ['programming', 'career', 'software-engineering'],
   },
+  // World News feeds
+  {
+    url: 'https://feeds.bbci.co.uk/news/world/rss.xml',
+    name: 'BBC World News',
+    topics: ['world', 'news', 'international'],
+  },
+  {
+    url: 'https://feeds.nbcnews.com/nbcnews/public/news',
+    name: 'NBC News',
+    topics: ['world', 'news', 'politics'],
+  },
 ];
 
 async function fetchRSSFeed(feed: RSSFeed): Promise<Article[]> {
