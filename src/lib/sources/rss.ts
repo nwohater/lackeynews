@@ -171,6 +171,57 @@ const AI_FEEDS: RSSFeed[] = [
     name: 'Investopedia',
     topics: ['business', 'finance', 'investing'],
   },
+  // Science feeds
+  {
+    url: 'https://www.nasa.gov/rss/dyn/breaking_news.rss',
+    name: 'NASA Breaking News',
+    topics: ['science', 'space', 'astronomy'],
+  },
+  {
+    url: 'https://www.nature.com/nature.rss',
+    name: 'Nature',
+    topics: ['science', 'research'],
+  },
+  {
+    url: 'https://www.scientificamerican.com/feed/',
+    name: 'Scientific American',
+    topics: ['science', 'research'],
+  },
+  {
+    url: 'https://www.smithsonianmag.com/rss/',
+    name: 'Smithsonian Magazine',
+    topics: ['science', 'history', 'culture'],
+  },
+  {
+    url: 'https://feeds.feedburner.com/tedtalks_video',
+    name: 'TED Talks Daily',
+    topics: ['science', 'technology', 'ideas'],
+  },
+  {
+    url: 'https://www.sciencemag.org/rss/current.xml',
+    name: 'Science Magazine',
+    topics: ['science', 'research'],
+  },
+  {
+    url: 'https://www.livescience.com/feeds/all',
+    name: 'Live Science',
+    topics: ['science', 'health', 'nature'],
+  },
+  {
+    url: 'https://www.popsci.com/arcio/rss/',
+    name: 'Popular Science',
+    topics: ['science', 'technology'],
+  },
+  {
+    url: 'https://theconversation.com/us/articles.atom',
+    name: 'The Conversation',
+    topics: ['science', 'research', 'academia'],
+  },
+  {
+    url: 'https://www.nationalgeographic.com/content/nationalgeographic/en_us/rss',
+    name: 'National Geographic',
+    topics: ['science', 'nature', 'exploration'],
+  },
   // Sports feeds
   {
     url: 'https://www.espn.com/espn/rss/news',
